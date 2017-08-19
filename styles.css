@@ -1,0 +1,227 @@
+<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+<style>
+
+@font-face {
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+}
+
+#notebook_panel { /* main background */
+    background: rgb(245,245,245);
+}
+
+div.cell { /* set cell width */
+    width: 1000px;
+}
+
+div #notebook { /* centre the content */
+    background: #fff; /* white background for content */
+    width: 1200px;
+    margin: auto;
+    padding-left: 0em;
+}
+
+#notebook li { /* More space between bullet points */
+    margin-top:0.8em;
+}
+
+/* draw border around running cells */
+div.cell.border-box-sizing.code_cell.running { 
+    border: 1px solid #111;
+}
+
+/* Put a solid color box around each cell and its output, visually linking them*/
+div.cell.code_cell {
+    background-color: rgb(256,256,256); 
+    border-radius: 0px; 
+    padding: 0.5em;
+    margin-left:1em;
+    margin-top: 1em;
+}
+
+div.text_cell_render{
+    font-family: 'Alegreya Sans' sans-serif;
+    line-height: 140%;
+    font-size: 125%;
+    font-weight: 400;
+    width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.text_cell_render h1, .text_cell_render h2, .text_cell_render h3, .text_cell_render h4, .text_cell_render h5, .text_cell_render h6 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+}
+
+/* Formatting for header cells */
+.text_cell_render h1 { 
+    font-size: 28pt;
+    line-height: 100%;
+    color: rgb(0,51,102);
+    margin-bottom: 0.2em;
+    margin-top: 0.5em;
+    display: block;
+}
+
+.text_cell_render h2 {
+    font-size: 24pt;
+    line-height: 100%;
+    color: rgb(0,51,102);
+    margin-bottom: 0.1em;
+    margin-top: 0.3em;
+    display: block;
+}	
+
+.text_cell_render h3 {
+    margin-top:16px;
+    font-size: 20pt;
+    margin-bottom: 3px;
+    font-style: regular;
+    color: rgb(102,102,0);
+}
+
+.text_cell_render h4 {    /*Use this for captions*/
+    /*text-align: center;*/
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-style: regular;
+}
+
+.text_cell_render h5 {  /*Use this for small titles*/
+    font-size: 16pt;
+    color: rgb(163,0,0);
+    font-style: italic;
+    margin-bottom: .1em;
+    margin-top: 0.8em;
+    display: block;
+}
+
+.text_cell_render h6 { /*use this for copyright note*/
+    font-family: 'PT Mono', sans-serif;
+    font-weight: 300;
+    font-size: 12pt;
+    line-height: 100%;
+    color: grey;
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+
+.text_cell_render p {
+    text-align: justify
+}
+
+.CodeMirror{
+    font-family: "Source Code Pro";
+    font-size: 100%;
+}
+
+.alert-box {
+    padding:10px 10px 10px 36px;
+    margin:5px;
+}
+
+.success {
+    color:#666600;
+    background:rgb(240,242,229);
+}
+
+/* Custom Images with Caption*/
+
+.imgWithCaption
+{
+    text-align: center;
+        padding-top: 18pt;
+}
+
+.imgWithCaption > img:before
+{
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+.imgWithCaption > img
+{
+    padding: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 2pt solid #EEE;
+}
+
+.imgWithCaption > .caption
+{
+  margin: auto;
+  padding-top : 12pt;
+  padding-bottom : 12pt;
+  padding-left : 18pt;
+  padding-right : 18pt;
+  font-size: 12pt;
+}
+
+
+</style>
+
+<script>
+  
+
+  MathJax.Ajax.config.path["Contrib"] = "//cdn.mathjax.org/mathjax/contrib";
+
+  MathJax.Hub.Config({
+          extensions: [ "[Contrib]/counters/counters.js" ],
+          "HTML-CSS": {
+              styles: {'.MathJax_Display': {"margin": 4}},
+              availableFonts: ["Latin-Modern","TeX"],
+            preferredFont: "TeX",
+            webFont: "TeX"
+          },
+          TeX: {
+             extensions: ["AMSmath.js", "AMSsymbols.js", "begingroup.js","color.js"],
+             equationNumbers: { autoNumber: "all" },
+             Augment: {
+               Definitions: {macros: {
+                 unitfrac: "myUnitFrac"
+               }},
+               Parse: {prototype: {
+                 myUnitFrac: function (name) {
+                   var n = this.GetBrackets(name),
+                       num = this.GetArgument(name),
+                       den = this.GetArgument(name);
+                   if (n == null) {n = ""}
+                   var tex = n + '\\,[\\text{'+num+'}/\\text{'+den+'}]';
+                   this.string = tex + this.string.slice(this.i); this.i = 0;
+                 }
+               }}
+             }
+             },
+          tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+              displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+          },
+          displayAlign: 'center' 
+  });
+
+
+
+  
+  
+  $("<style type='text/css'> .cell.code_cell.collapse { max-height:30px; overflow:hidden;} </style>").appendTo("head");
+  $('.prompt.input_prompt').on('click', function(event) {
+      console.log("CLICKED", arguments)   
+      var c = $(event.target.closest('.cell.code_cell'))
+      if(c.hasClass('collapse')) {
+          c.removeClass('collapse');
+      } else {
+          c.addClass('collapse');
+      }
+  });
+  
+</script>

@@ -20,5 +20,5 @@ Model: http://www.zfm.ethz.ch/~glocker/PublicationPDF/Conference%20Proceedings/b
     <tr>
 </table>
 <div style="width:100%;text-align:center;">
-      <img src="WoodpeckerAnimation2.svg" style="width:100%;border-width:3pt;border-color:#AAAAAA;border-style:solid;"/>
+      <img src="https://cdn.rawgit.com/gabyx/Woodpecker/19f00601/WoodpeckerAnimation2.svg" style="width:100%;border-width:3pt;border-color:#AAAAAA;border-style:solid;"/>
 </div>

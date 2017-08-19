@@ -22,4 +22,4 @@ Model: http://www.zfm.ethz.ch/~glocker/PublicationPDF/Conference%20Proceedings/b
 
 **The Result:**   
 
-<img src="https://cdn.rawgit.com/gabyx/Woodpecker/19f00601/WoodpeckerAnimation2.svg" align="center" width="50%"  />
+<img src="https://cdn.rawgit.com/gabyx/Woodpecker/19f00601/WoodpeckerAnimation2.svg" align="center" width="100%"  />

@@ -20,6 +20,10 @@ Model: http://www.zfm.ethz.ch/~glocker/PublicationPDF/Conference%20Proceedings/b
     </tr>
 </table>
 
+**See the Notebook:** 
+https://github.com/gabyx/Woodpecker/blob/master/woodpecker.ipynb
+
 **The Result:**   
 
 <img src="https://cdn.rawgit.com/gabyx/Woodpecker/19f00601/WoodpeckerAnimation2.svg" align="center" width="100%"  />
+

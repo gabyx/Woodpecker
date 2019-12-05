@@ -1,4 +1,6 @@
 c = get_config()
-c.NbConvertApp.Application.log_level = 10
-c.NbConvertApp.export_format = "html_embed" 
-c.NbConvertApp.codefolding = True
+c.Application.log_level = 'DEBUG'
+c.Exporter.preprocessors = ["jupyter_contrib_nbextensions.nbconvert_support.EmbedImagesPreprocessor"]
+c.EmbedImagesPreprocessor.embed_images=True
+c.NbConvertApp.export_format = "html_toc"
+c.CodeFoldingPreprocessor.remove_folded_code=True
